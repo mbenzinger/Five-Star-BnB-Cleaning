@@ -9,6 +9,7 @@ function SignUpForm() {
 		firstName: '',
 		lastName: '',
 		email: '',
+		userType: '',
 		password: ''
 	})
 
@@ -30,63 +31,59 @@ function SignUpForm() {
 		<main>
 			<h1>Sign Up</h1>
 			<form onSubmit={handleSubmit}>
-				<div className="row">
-					<div className="col-sm-6 form-group">
+				<div>
+					<div>
 						<label htmlFor="firstName">First Name</label>
 						<input
 							required
 							value={user.firstName}
 							onChange={e => setUser({ ...user, firstName: e.target.value })}
-							className="form-control"
 							id="firstName"
 							name="firstName"
 						/>
 					</div>
-					<div className="col-sm-6 form-group">
+					<div>
 						<label htmlFor="lastName">Last Name</label>
 						<input
 							required
 							value={user.lastName}
 							onChange={e => setUser({ ...user, lastName: e.target.value })}
-							className="form-control"
 							id="lastName"
 							name="lastName"
 						/>
 					</div>
 				</div>
-				<div className="row">
-					<div className="col-sm-6 form-group">
+				<div>
+					<div>
 						<label htmlFor="email">Email</label>
 						<input
 							type="email"
 							required
 							value={user.email}
 							onChange={e => setUser({ ...user, email: e.target.value })}
-							className="form-control"
 							id="email"
 							name="email"
 						/>
 					</div>
 				</div>
-                <div className="row">
-					<div className="col-sm-6 form-group">
+                <div>
+					<div>
 						<label htmlFor="userType">User Type</label>
 						<select
 							type="userType"
 							required
 							value={user.userType}
 							onChange={e => setUser({ ...user, userType: e.target.value })}
-							className="form-control"
 							id="userType"
 							name="userType"                            
 						>
                         <option value=""></option>
                         <option value="Property Owner">Property Owner</option>
-                        <option value="sub contractor">Sub Contractor</option>
+                        <option value="Sub Contractor">Sub Contractor</option>
                         </select>
 					</div>
 				</div>
-				<input className="btn btn-primary" type="submit" value="Sign Up" />
+				<input type="submit" value="Sign Up" />
 			</form>
 		</main>
 	)
