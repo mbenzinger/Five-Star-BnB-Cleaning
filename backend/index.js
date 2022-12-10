@@ -20,9 +20,12 @@ if (process.env.NODE_ENV === "production") {
 // Controllers & Routes
 
 app.use(express.urlencoded({ extended: true }))
-
 app.use('/api/properties', require('./controllers/properties'))
 app.use('/api/users', require('./controllers/users'))
+
+// Routes
+
+
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
