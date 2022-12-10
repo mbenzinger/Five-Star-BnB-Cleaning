@@ -1,22 +1,22 @@
-import { useState } from "react"
-import { useHistory } from "react-router"
+import { useState } from "react";
+//import { useHistory } from "react-router-dom";
 
-function AddPropertyForm() {
+function NewPlaceForm() {
 
-	const history = useHistory()
+	//const history = useHistory()
 
-	const [place, setProperty] = useState({
+	const [place, setPlace] = useState({
 		name: '',
 		pic: '',
-		location: '',
-        area: "",
+		city: '',
+		footage: ''
 		
 	})
 
 	async function handleSubmit(e) {
 		e.preventDefault()
 
-		await fetch(`http://localhost:5000/properties`, {
+		await fetch(`http://localhost:5000/places`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ function AddPropertyForm() {
 			body: JSON.stringify(place)
 		})
 
-		history.push('/properties')
+		//history.push('/places')
 	}
 
 	return (
@@ -32,53 +32,51 @@ function AddPropertyForm() {
 			<h1>Add a New Property</h1>
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
-					<label htmlFor="name">Property Name</label>
+					<label htmlFor="name">Place Name</label>
 					<input
 						required
-						value={property.name}
-						onChange={e => setProperty({ ...property, name: e.target.value })}
+						value={place.name}
+						onChange={e => setPlace({ ...place, name: e.target.value })}
 						className="form-control"
 						id="name"
 						name="name"
 					/>
 				</div>
-                <div className="form-group">
+				<div className="form-group">
+					<label htmlFor="founded">Square Footage</label>
+					<input
+						required
+						value={place.founded}
+						onChange={e => setPlace({ ...place, founded: e.target.value })}
+						className="form-control"
+						id="footage"
+						name="footage"
+					/>
+				</div>
+				<div className="form-group">
 					<label htmlFor="pic">Property Picture</label>
 					<input
-						value={property.pic}
-						onChange={e => setProperty({ ...property, pic: e.target.value })}
+						value={place.pic}
+						onChange={e => setPlace({ ...place, pic: e.target.value })}
 						className="form-control"
 						id="pic"
 						name="pic"
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="location">Location</label>
+					<label htmlFor="city">City</label>
 					<input
-						required
-						value={property.location}
-						onChange={e => setProperty({ ...property, location: e.target.value })}
+						value={place.city}
+						onChange={e => setPlace({ ...place, city: e.target.value })}
 						className="form-control"
-						id="location"
-						name="location"
+						id="city"
+						name="city"
 					/>
 				</div>
-                <div className="form-group">
-					<label htmlFor="area">Square Fottage</label>
-					<input
-						required
-						value={property.area}
-						onChange={e => setProperty({ ...property, area: e.target.value })}
-						className="form-control"
-						id="area"
-						name="area"
-					/>
-				</div>
-				
-				<input className="btn btn-primary" type="submit" value="Add Property" />
+				<input className="btn btn-primary" type="submit" value="Add Place" />
 			</form>
 		</main>
 	)
 }
 
-export default AddPropertyForm;
+export default NewPlaceForm
