@@ -1,3 +1,30 @@
+# Five-Star-BnB-Cleaning
+P3FP
+ 
+# Contributors
+David Mays
+Wade Graves
+Mason Benzinger
+
+# Goal
+Build an app for a short-term rental turnover company to maintain contacts with property owners and sub contractors.
+
+App should have a landing page, a sign-up/login page, and a page to view properties.
+    The page should have basic-
+        NAV Bar
+            Home
+            Sign-up/login
+            Properties
+            Calendar*
+        About Us
+        Contact Info
+    owners will provide property information for viewing by others
+* A calandar API can be used as a bonus, additional bonus to to create functions for owners to schedule cleanings and sub contractors to see the upcoming schedule.
+
+
+
+---Boiler plate readme---
+________________________________________________________________
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
