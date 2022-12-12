@@ -19,13 +19,12 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
 
     },
-<<<<<<< HEAD
     property_name: DataTypes.STRING,
     address: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     square_feet: DataTypes.NUMBER,
-=======
+
     name: DataTypes.STRING,
     city: DataTypes.STRING,
     footage: DataTypes.INT,
