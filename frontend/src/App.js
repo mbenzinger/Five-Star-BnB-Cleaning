@@ -1,13 +1,25 @@
-
+import {BrowserRouter as Router,Routes,Route}from 'react-router-dom'
 import './App.css';
-import AddPropertyForm from './places/AddPropertyForm';
-
+import AddPropertyForm from './Routes/AddPropertyForm';
+import LoginForm from './Routes/LoginForm';
+import SignUpForm from './Routes/SignUpForm';
+import Homepage from './Routes/Homepage'
+import CurrentUser from './Routes/CurrentUser';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <AddPropertyForm/>
-      </header>
+      <Router>
+        <div>
+    <Routes>
+      <Route path="/" element={<Homepage/>}/>
+      <Route path="/Property" element={<AddPropertyForm/>}/>
+      <Route path="/signup" element={<SignUpForm/>}/>
+      <Route path="/login" element={<LoginForm/>}/>  
+      <Route path='/currentuser' element={<CurrentUser/>}/>
+
+    </Routes>
+    </div>
+    </Router>
     </div>
   );
 }
