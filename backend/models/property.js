@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
 
-  class Place extends Model {
+  class Property extends Model {
 
 
     static associate({ }) {
@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
 
   };
 
-  Place.init({
-    placeId: {
+  Property.init({
+    propertyId: {
       type: DataTypes.SMALLINT,
       primaryKey: true,
       autoIncrement: true
@@ -21,12 +21,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: DataTypes.STRING,
     city: DataTypes.STRING,
-    footage: DataTypes.STRING,
+    footage: DataTypes.INT,
     pic: DataTypes.STRING
   }, {
     sequelize,
     underscored: true,
-    modelName: 'Place',
+    modelName: 'Property',
   });
-  return Place;
+  return Property;
 };

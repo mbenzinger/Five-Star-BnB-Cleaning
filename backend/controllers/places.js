@@ -2,7 +2,7 @@ const express=require('express')
 const router = require('express').Router()
 //const db = require("../models")
 
-const { Place, Comment, User } = db
+const { Property } = db
 
 router.post('/', async (req, res) => {
     if (!req.body.pic) {
@@ -17,66 +17,66 @@ router.post('/', async (req, res) => {
     if (!req.body.name) {
         req.body.name = 'Property Name'
     }
-    const place = await Place.create(req.body)
-    res.json(place)
+    const property = await Property.create(req.body)
+    res.json(property)
 })
 
 
 router.get('/', async (req, res) => {
-    const places = await Place.findAll()
-    res.json(places)
+    const properties = await Property.findAll()
+    res.json(properties)
 })
 
 
-router.get('/:placeId', async (req, res) => {
-    let placeId = Number(req.params.placeId)
-    if (isNaN(placeId)) {
-        res.status(404).json({ message: `Invalid id "${placeId}"` })
+router.get('/:propertyId', async (req, res) => {
+    let propertyId = Number(req.params.propertyId)
+    if (isNaN(propertyId)) {
+        res.status(404).json({ message: `Invalid id "${propertyId}"` })
     } else {
-        const place = await Place.findOne({
-            where: { placeId: placeId }
+        const property = await Property.findOne({
+            where: { propertyId: propertyId }
         })
-        if (!place) {
-            res.status(404).json({ message: `Could not find place with id "${placeId}"` })
+        if (!property) {
+            res.status(404).json({ message: `Could not find property with id "${propertyId}"` })
         } else {
-            res.json(place)
+            res.json(property)
         }
     }
 })
 
-router.put('/:placeId', async (req, res) => {
-    let placeId = Number(req.params.placeId)
-    if (isNaN(placeId)) {
-        res.status(404).json({ message: `Invalid id "${placeId}"` })
+router.put('/:propertyId', async (req, res) => {
+    let propertyId = Number(req.params.propertyId)
+    if (isNaN(propertyId)) {
+        res.status(404).json({ message: `Invalid id "${propertyId}"` })
     } else {
-        const place = await Place.findOne({
-            where: { placeId: placeId },
+        const property = await Property.findOne({
+            where: { propertyId: propertyId },
         })
-        if (!place) {
-            res.status(404).json({ message: `Could not find place with id "${placeId}"` })
+        if (!property) {
+            res.status(404).json({ message: `Could not find property with id "${propertyId}"` })
         } else {
-            Object.assign(place, req.body)
-            await place.save()
-            res.json(place)
+            Object.assign(property, req.body)
+            await property.save()
+            res.json(property)
         }
     }
 })
 
-router.delete('/:placeId', async (req, res) => {
-    let placeId = Number(req.params.placeId)
-    if (isNaN(placeId)) {
-        res.status(404).json({ message: `Invalid id "${placeId}"` })
+router.delete('/:propertyId', async (req, res) => {
+    let propertyId = Number(req.params.propertyId)
+    if (isNaN(propertyId)) {
+        res.status(404).json({ message: `Invalid id "${propertyId}"` })
     } else {
-        const place = await Place.findOne({
+        const property = await Property.findOne({
             where: {
-                placeId: placeId
+                propertyId: propertyId
             }
         })
-        if (!place) {
-            res.status(404).json({ message: `Could not find place with id "${placeId}"` })
+        if (!property) {
+            res.status(404).json({ message: `Could not find property with id "${propertyId}"` })
         } else {
-            await place.destroy()
-            res.json(place)
+            await property.destroy()
+            res.json(property)
         }
     }
 })
