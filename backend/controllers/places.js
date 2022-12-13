@@ -1,6 +1,6 @@
 const express=require('express')
 const router = require('express').Router()
-//const db = require("../models")
+const db = require("../models")
 
 const { Place, Comment, User } = db
 
