@@ -28,9 +28,24 @@ router.get('/:id', (req, res) => {
       res.render('error404')
     }
     else {
-    res.render('properties/show', { property: properties[id]})
+    res.render('properties/show', { property: properties[id], id})
     }
   })
+
+  router.delete('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!properties[id]) {
+      res.render('error404')
+    }
+    else {
+      properties.splice(id, 1)
+      res.redirect('/properties')
+    }
+  })
+  
   
 
 module.exports = router

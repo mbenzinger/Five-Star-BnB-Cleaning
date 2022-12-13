@@ -4,9 +4,7 @@ const { Sequelize } = require('sequelize');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-
-
-
+const methodOverride = require('method-override')
 
 // Express Settings
 app.set('view engine', 'jsx')
@@ -16,6 +14,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 require('dotenv').config();
+app.use(methodOverride('_method'))
 
 //Controllers and routes
 const propertyController = require('./controllers/properties')
