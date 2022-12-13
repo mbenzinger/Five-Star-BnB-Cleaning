@@ -1,4 +1,5 @@
 'use strict';
+const bcrypt = require('bcrypt')
 require('dotenv').config()
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
             last_name: 'Doe',
             email: 'john.doe@example.com',
             userType: 'admin',
+            password_digest: await bcrypt.hash(process.env.ADMIN_PASSWORD, 10),
             created_at: new Date(),
             updated_at: new Date()
         },
@@ -17,6 +19,7 @@ module.exports = {
             last_name: 'Moe',
             email: 'john.moe@example.com',
             userType: 'Property Owner',
+            password_digest: await bcrypt.hash(process.env.ADMIN_PASSWORD, 10),
             created_at: new Date(),
             updated_at: new Date()
         },
@@ -25,6 +28,7 @@ module.exports = {
             last_name: 'Joe',
             email: 'becky.joe@example.com',
             userType: 'Sub Contractor',
+            password_digest: await bcrypt.hash(process.env.ADMIN_PASSWORD, 10),
             created_at: new Date(),
             updated_at: new Date()
         }]
