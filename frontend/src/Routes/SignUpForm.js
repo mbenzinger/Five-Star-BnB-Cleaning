@@ -31,7 +31,7 @@ function SignUpForm() {
 		<main>
 			<h1>Sign Up</h1>
 			<form onSubmit={handleSubmit}>
-				<div>
+				<div className="row">
 					<div>
 						<label htmlFor="firstName">First Name</label>
 						<input
@@ -53,7 +53,7 @@ function SignUpForm() {
 						/>
 					</div>
 				</div>
-				<div>
+				<div className="row">
 					<div>
 						<label htmlFor="email">Email</label>
 						<input
