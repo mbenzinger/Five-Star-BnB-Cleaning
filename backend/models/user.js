@@ -5,9 +5,9 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
 
-    // static associate({ Property }) {
-    //   User.hasMany(Property, { as: 'owner', foreignKey: 'owner_id' })
-    // }
+    static associate({ Property }) {
+      User.hasMany(Property, { as: 'Property Owner', foreignKey: 'userId' })
+    }
 
   };
   User.init({
@@ -20,7 +20,15 @@ module.exports = (sequelize, DataTypes) => {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
-    userType: DataTypes.STRING
+    userType: {
+      type: DataTypes.ENUM,
+      values: [
+        'Property Owner',
+        'Sub Contractor',
+        'admin',
+      ],
+    },
+    passwordDigest: DataTypes.STRING
   }, {
     sequelize,
     underscored: true,
