@@ -38,9 +38,11 @@ module.exports = {
             `SELECT user_id from users LIMIT 1;`
         );
 
-        await queryInterface.bulkInsert('properties', [
+        await queryInterface.bulkInsert('places', [
             {
-                property_name: 'Home by the Sea',
+                placeId: places[0].placeId,
+                userId: users[1].userId,
+                name: 'Home by the Sea',
                 address: '1234 Sea Shore Bluff Drive',
                 city: 'Seattle',
                 state: 'WA',
@@ -51,13 +53,13 @@ module.exports = {
             }
         ])
 
-        const [properties] = await queryInterface.sequelize.query(
-            `SELECT property_id from properties LIMIT 1;`
+        const [places] = await queryInterface.sequelize.query(
+            `SELECT placeId from places LIMIT 1;`
         );
     },
 
     down: async (queryInterface, Sequelize) => {
         await queryInterface.bulkDelete('users', null, {});
-        await queryInterface.bulkDelete('properties', null, {});
+        await queryInterface.bulkDelete('places', null, {});
     }
 };

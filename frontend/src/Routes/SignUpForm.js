@@ -31,7 +31,7 @@ function SignUpForm() {
 		<main>
 			<h1>Sign Up</h1>
 			<form onSubmit={handleSubmit}>
-				<div>
+				<div className="row">
 					<div>
 						<label htmlFor="firstName">First Name</label>
 						<input
@@ -53,7 +53,7 @@ function SignUpForm() {
 						/>
 					</div>
 				</div>
-				<div>
+				<div className="row">
 					<div>
 						<label htmlFor="email">Email</label>
 						<input
@@ -66,7 +66,7 @@ function SignUpForm() {
 						/>
 					</div>
 				</div>
-                <div>
+				<div>
 					<div>
 						<label htmlFor="userType">User Type</label>
 						<select
@@ -75,12 +75,24 @@ function SignUpForm() {
 							value={user.userType}
 							onChange={e => setUser({ ...user, userType: e.target.value })}
 							id="userType"
-							name="userType"                            
+							name="userType"
 						>
-                        <option value=""></option>
-                        <option value="Property Owner">Property Owner</option>
-                        <option value="Sub Contractor">Sub Contractor</option>
-                        </select>
+							<option value=""></option>
+							<option value="Property Owner">Property Owner</option>
+							<option value="Sub Contractor">Sub Contractor</option>
+						</select>
+					</div>
+					<div>
+						<label htmlFor="password">Password</label>
+						<input
+							type="password"
+							required
+							value={user.password}
+							onChange={e => setUser({ ...user, password: e.target.value })}
+							className="form-control"
+							id="password"
+							name="password"
+						/>
 					</div>
 				</div>
 				<input type="submit" value="Sign Up" />

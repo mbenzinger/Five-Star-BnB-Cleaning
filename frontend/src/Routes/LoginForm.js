@@ -1,13 +1,13 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router"
-// import { CurrentUser } from "./Routes/CurrentUser"
+import { CurrentUser } from "../contexts/CurrentUser"
 
 function LoginForm() {
 
     const history = useNavigate()
 
-    
-    // const { setCurrentUser } = useContext(CurrentUser)
+
+    const { setCurrentUser } = useContext(CurrentUser)
 
     const [credentials, setCredentials] = useState({
         email: '',
@@ -18,7 +18,26 @@ function LoginForm() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-       
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}authentication/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        })
+
+        const data = await response.json()
+
+        if (response.status === 200) {
+            setCurrentUser(data.user)
+            localStorage.setItem('token', data.token)
+            //console.log(data.token)
+            history.push(`/`)
+        } else {
+            setErrorMessage(data.message)
+        }
+
+        console.log(data)
 
     }
 
