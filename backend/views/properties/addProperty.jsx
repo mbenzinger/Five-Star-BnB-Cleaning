@@ -23,11 +23,11 @@ export default function addProperty() {
               </div>
               <div className="form-group">
                 <label htmlFor="city">City</label>
-                <input className="form-control" id="city" name="city" />
+                <input className="form-control" id="city" name="city" required />
               </div>
               <div className="form-group">
                <label htmlFor="state">State</label>
-               <input className="form-control" id="state" name="state" />
+               <input className="form-control" id="state" name="state" required />
              </div>
              
 				<input className="btn btn-primary" type="submit" value="Add Property" />
