@@ -3,7 +3,8 @@ import './App.css';
 import AddPropertyForm from './Routes/AddPropertyForm';
 import LoginForm from './Routes/LoginForm';
 import SignUpForm from './Routes/SignUpForm';
-import Homepage from './Routes/Homepage'
+import Homepage from './Routes/Homepage';
+import Error404 from './Routes/Error404'
 import CurrentUser from './Routes/CurrentUser';
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/Property" element={<AddPropertyForm/>}/>
       <Route path="/signup" element={<SignUpForm/>}/>
       <Route path="/login" element={<LoginForm/>}/>  
+      <Route path="/Error404" element={<Error404/>}/>  
       <Route path='/currentuser' element={<CurrentUser/>}/>
 
     </Routes>
