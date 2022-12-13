@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router"
-import { CurrentUser } from "./Routes/CurrentUser"
+import { CurrentUser } from "../contexts/CurrentUser"
 
 function LoginForm() {
 
