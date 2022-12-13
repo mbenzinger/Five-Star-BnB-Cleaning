@@ -4,78 +4,32 @@ const Def = require('../default')
 //import { useHistory } from "react-router-dom";
 
 export default function addProperty() {
-
-	//const history = useHistory()
-
-	const [property, setProperty] = useState({
-		name: '',
-		pic: '',
-		city: '',
-		footage: ''
-		
-	})
-
-	async function handleSubmit(e) {
-		e.preventDefault()
-
-		await fetch(`http://localhost:5000/properties`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(property)
-		})
-
-		//history.push('/places')
-	}
-
 	return (
         <Def>
 		<main>
-			<h1>Add a New Property</h1>
-			<form onSubmit={handleSubmit}>
-				<div className="form-group">
-					<label htmlFor="name">Property Name</label>
-					<input
-						required
-						value={property.name}
-						onChange={e => setProperty({ ...property, name: e.target.value })}
-						className="form-control"
-						id="name"
-						name="name"
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="founded">Square Footage</label>
-					<input
-						required
-						value={property.founded}
-						onChange={e => setProperty({ ...property, founded: e.target.value })}
-						className="form-control"
-						id="footage"
-						name="footage"
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="pic">Property Picture</label>
-					<input
-						value={property.pic}
-						onChange={e => setProperty({ ...property, pic: e.target.value })}
-						className="form-control"
-						id="pic"
-						name="pic"
-					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="city">City</label>
-					<input
-						value={property.city}
-						onChange={e => setProperty({ ...property, city: e.target.value })}
-						className="form-control"
-						id="city"
-						name="city"
-					/>
-				</div>
+        <h1>Add a New Property</h1>
+			<form method="POST" action="/properties">
+              <div className="form-group">
+                <label htmlFor="name">Property Name</label>
+                <input className="form-control" id="name" name="name" required/>
+              </div>
+              <div className="form-group">
+               <label htmlFor="cuisines">Square Footage</label>
+                <input className="form-control" id="footage" name="footage" requried />
+              </div>
+              <div className="form-group">
+                <label htmlFor="pic">Property Picture</label>
+                <input className="form-control" id="pic" name="pic" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="city">City</label>
+                <input className="form-control" id="city" name="city" />
+              </div>
+              <div className="form-group">
+               <label htmlFor="state">State</label>
+               <input className="form-control" id="state" name="state" />
+             </div>
+             
 				<input className="btn btn-primary" type="submit" value="Add Property" />
 			</form>
 		</main>

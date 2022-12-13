@@ -21,6 +21,11 @@ router.get('/new', (req, res) => {
     res.render('properties/addProperty')
 })
 
+router.post('/', (req,res) => {
+    console.log(req.body)
+    res.send('POST/properties')
+})
+
 module.exports = router
 
 
