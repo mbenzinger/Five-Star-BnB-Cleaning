@@ -2,17 +2,21 @@ const React = require('react')
 const Def = require('../default')
 
 export default function index (data) {
-  let propertiesFormatted = data.properties.map((place) => {
+  let propertiesFormatted = data.properties.map((property, index) => {
     return (
       <div className="col-sm-6">
-        <h2>{place.name}</h2>
+        <h2>
+        <a href={`/properties/${index}`} >
+          {property.name}
+        </a>
+      </h2>
         <p className="text-center">
-          Located in {place.city}, {place.state}
+          Located in {property.city}, {property.state}
         </p>
-        <img src={place.pic} alt={place.name}/>
         <p className="text-center">
-          Square Footage: {place.squarefootage}
+          Square Footage: {property.squarefootage}
         </p>
+        <img src={property.pic} alt={property.name}/>
       </div>
     )
   })
@@ -27,5 +31,7 @@ export default function index (data) {
     </Def>
 )
 }
+
+
 
   

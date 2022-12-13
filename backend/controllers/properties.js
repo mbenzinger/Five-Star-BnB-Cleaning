@@ -19,7 +19,22 @@ router.post('/', (req,res) => {
     res.redirect('/properties')
 })
 
+router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!properties[id]) {
+      res.render('error404')
+    }
+    else {
+    res.render('properties/show', { property: properties[id]})
+    }
+  })
+  
+
 module.exports = router
 
 
+  
 
