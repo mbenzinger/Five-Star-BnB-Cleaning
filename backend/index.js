@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const methodOverride = require('method-override')
+const router = express.Router();
+const path = require('path')
 
 // Express Settings
 app.set('view engine', 'jsx')
@@ -16,7 +18,14 @@ app.use(bodyParser.json());
 require('dotenv').config();
 app.use(methodOverride('_method'))
 
+// serve static frontend in production mode
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, 'public', 'build')));
+}
+
 //Controllers and routes
+app.use(express.urlencoded({ extended: true }))
+app.use('/api/users', require('./controllers/users'))
 const propertyController = require('./controllers/properties')
 app.use('/properties', propertyController)
 
