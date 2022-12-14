@@ -27,6 +27,8 @@ function Homepage() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/signup">Sign-Up</Nav.Link>
                   <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link href="/AddPropertyForm">Add Property</Nav.Link>
+                  <Nav.Link href="/Listings">Listings</Nav.Link>
                   
                 </Nav>
                

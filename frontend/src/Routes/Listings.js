@@ -1,17 +1,13 @@
-import { useState } from "react";
-import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-//const Def = require('../backend/views/default')
-//import { useHistory } from "react-router-dom";
 
-export default function addProperty() {
-	return (
-		<>
+function Listings() {
+  return (
+    <>
       {[false, ].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
@@ -41,33 +37,7 @@ export default function addProperty() {
           </Container>
         </Navbar>
       ))}
-		<main>
-        <h1>Add a New Property</h1>
-			<form method="POST" action="/properties">
-              <div className="form-group">
-                <label htmlFor="name">Property Name</label>
-                <input className="form-control" id="name" name="name" required/>
-              </div>
-              <div className="form-group">
-               <label htmlFor="cuisines">Square Footage</label>
-                <input className="form-control" id="footage" name="footage" requried />
-              </div>
-              <div className="form-group">
-                <label htmlFor="pic">Property Picture</label>
-                <input className="form-control" id="pic" name="pic" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="city">City</label>
-                <input className="form-control" id="city" name="city" required />
-              </div>
-              <div className="form-group">
-               <label htmlFor="state">State</label>
-               <input className="form-control" id="state" name="state" required />
-             </div>
-             
-				<input className="btn btn-primary" type="submit" value="Add Property" />
-			</form>
-		</main>
-		</>
-	)
-}
+      </>
+      )
+    }
+    export default Listings
