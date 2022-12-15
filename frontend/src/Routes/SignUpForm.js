@@ -9,7 +9,7 @@ function SignUpForm() {
 		firstName: '',
 		lastName: '',
 		email: '',
-		userType: '',
+		role: '',
 		password: ''
 	})
 
@@ -68,14 +68,14 @@ function SignUpForm() {
 				</div>
 				<div>
 					<div>
-						<label htmlFor="userType">User Type</label>
+						<label htmlFor="role">User Type</label>
 						<select
-							type="userType"
+							type="role"
 							required
-							value={user.userType}
-							onChange={e => setUser({ ...user, userType: e.target.value })}
-							id="userType"
-							name="userType"
+							value={user.role}
+							onChange={e => setUser({ ...user, role: e.target.value })}
+							id="role"
+							name="role"
 						>
 							<option value=""></option>
 							<option value="Property Owner">Property Owner</option>
