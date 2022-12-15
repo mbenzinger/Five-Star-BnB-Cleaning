@@ -9,7 +9,7 @@ module.exports = {
             first_name: 'John',
             last_name: 'Doe',
             email: 'john.doe@example.com',
-            userType: 'admin',
+            role: 'admin',
             password_digest: await bcrypt.hash(process.env.ADMIN_PASSWORD, 10),
             created_at: new Date(),
             updated_at: new Date()
@@ -18,7 +18,7 @@ module.exports = {
             first_name: 'John',
             last_name: 'Moe',
             email: 'john.moe@example.com',
-            userType: 'Property Owner',
+            role: 'Property Owner',
             password_digest: await bcrypt.hash(process.env.ADMIN_PASSWORD, 10),
             created_at: new Date(),
             updated_at: new Date()
@@ -27,7 +27,7 @@ module.exports = {
             first_name: 'Becky',
             last_name: 'Joe',
             email: 'becky.joe@example.com',
-            userType: 'Sub Contractor',
+            role: 'Sub Contractor',
             password_digest: await bcrypt.hash(process.env.ADMIN_PASSWORD, 10),
             created_at: new Date(),
             updated_at: new Date()
