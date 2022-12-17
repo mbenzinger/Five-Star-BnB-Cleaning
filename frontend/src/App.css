@@ -5,6 +5,10 @@
 .row{
   text-align: center;
 }
+.background{
+  background-color: #0081e9;
+}
+
 
 .format input{
   border-radius: 1em;

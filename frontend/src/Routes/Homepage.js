@@ -38,6 +38,7 @@ function Homepage() {
         </Navbar>
       ))}
 {/* //meat of assignment  */}
+<div classname='background'>
 <Container>
       <Row>
         <Col>
@@ -88,7 +89,7 @@ function Homepage() {
       
       </Row>
     </Container>
-
+    </div>
     </>
     
   );
