@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router"
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Container from 'react-bootstrap/Container';
 
 function SignUpForm() {
 
@@ -29,11 +33,46 @@ function SignUpForm() {
 
 	return (
 		<main>
+
+{[false, ].map((expand) => (
+        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+          <Container fluid>
+            <Navbar.Brand href="#">Five Star BNB Cleaning</Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                Five Star BNB Cleaning
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Nav.Link href="/signup">Sign-Up</Nav.Link>
+                  <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link href="/AddPropertyForm">Add Property</Nav.Link>
+                  <Nav.Link href="/Listings">Listings</Nav.Link>
+                  
+                </Nav>
+               
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
+
+
+			<div className="center">
 			<h1>Sign Up</h1>
+			</div>
 			<form onSubmit={handleSubmit}>
 				<div className="row">
-					<div>
+					<div className="format">
 						<label htmlFor="firstName">First Name</label>
+						<br/>
 						<input
 							required
 							value={user.firstName}
@@ -42,8 +81,9 @@ function SignUpForm() {
 							name="firstName"
 						/>
 					</div>
-					<div>
+					<div className="format">
 						<label htmlFor="lastName">Last Name</label>
+						<br/>
 						<input
 							required
 							value={user.lastName}
@@ -54,8 +94,9 @@ function SignUpForm() {
 					</div>
 				</div>
 				<div className="row">
-					<div>
+					<div className="format2">
 						<label htmlFor="email">Email</label>
+						<br/>
 						<input
 							type="email"
 							required
@@ -66,9 +107,10 @@ function SignUpForm() {
 						/>
 					</div>
 				</div>
-				<div>
+				<div className="format">
 					<div>
 						<label htmlFor="userType">User Type</label>
+						<br/>
 						<select
 							type="userType"
 							required
@@ -95,7 +137,9 @@ function SignUpForm() {
 						/>
 					</div>
 				</div>
+				<div className="format">
 				<input type="submit" value="Sign Up" />
+				</div>
 			</form>
 		</main>
 	)

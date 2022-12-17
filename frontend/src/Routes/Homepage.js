@@ -27,11 +27,8 @@ function Homepage() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/signup">Sign-Up</Nav.Link>
                   <Nav.Link href="/login">Login</Nav.Link>
-<<<<<<< HEAD
                   <Nav.Link href="/AddPropertyForm">Add Property</Nav.Link>
                   <Nav.Link href="/Listings">Listings</Nav.Link>
-=======
->>>>>>> 049ab755918aa0d9f01b8d5de0c429818e5144c0
                   
                 </Nav>
                
@@ -65,8 +62,30 @@ function Homepage() {
       </Row>
       <Row>
         <Col></Col>
-        <Col><h2>How We Work</h2></Col>
+        <Col>
+        <h2>How We Work</h2>
+        </Col>
         <Col></Col>
+      </Row>
+      <br/>
+      <Row>      
+        <Col>
+        <h2>Login-in</h2>
+        <img src='login.jpg'/>
+        </Col>
+        <Col>
+        <h2>Enter Your Address</h2>
+        <img src='enter info.jpg'></img>
+        </Col>
+        <Col>
+        <h2>Get A Quote</h2>
+        <img src='get quote.jpg'></img>
+        </Col>
+        <Col>
+        <h2>Set us handle the rest</h2>
+
+        </Col>
+      
       </Row>
     </Container>
 
