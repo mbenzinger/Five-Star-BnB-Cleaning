@@ -4,7 +4,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import LoginPicture from '../assets/images/login.jpg'
+import EnterPicture from '../assets/images/enter info.jpg'
+import QuotePicture from '../assets/images/get quote.jpg'
+import CleanPicture from '../assets/images/clean.jpg'
 function Homepage() {
   return (
     <>
@@ -64,6 +67,7 @@ function Homepage() {
       <Row>
         <Col></Col>
         <Col>
+        <br/>
         <h2>How We Work</h2>
         </Col>
         <Col></Col>
@@ -72,19 +76,19 @@ function Homepage() {
       <Row>      
         <Col>
         <h2>Login-in</h2>
-        <img src='login.jpg'/>
+        <img src={LoginPicture}/>
         </Col>
         <Col>
         <h2>Enter Your Address</h2>
-        <img src='enter info.jpg'></img>
+        <img src={EnterPicture}></img>
         </Col>
         <Col>
         <h2>Get A Quote</h2>
-        <img src='get quote.jpg'></img>
+        <img src={QuotePicture}></img>
         </Col>
         <Col>
-        <h2>Set us handle the rest</h2>
-
+        <h2>Let us handle the rest</h2>
+        <img src={CleanPicture}></img>
         </Col>
       
       </Row>
