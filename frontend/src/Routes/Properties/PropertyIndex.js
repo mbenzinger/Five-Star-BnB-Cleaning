@@ -42,12 +42,9 @@ export default function PropertyIndex () {
         ))}
           <main>
               <h1 className='listHead'>Click here to check out the property listings!</h1>
-              <a href="/Listings">
-              <button type="button" class="btn btn-primary">Listings</button>
-              </a>
-
+      
               <h1 className='addHead'>Click here to add a new property!</h1>
-              <a href="/AddPropertyForm">
+              <a href="http://localhost:5000/properties/new">
               <button type="button" class="btn btn-danger">Add Property</button>
               </a>
               <a href="http://localhost:5000/properties">
