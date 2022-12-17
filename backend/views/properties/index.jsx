@@ -46,7 +46,7 @@ export default function index (data) {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/signup">Sign-Up</Nav.Link>
-                  <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link href="http://localhost:3000/login">Login</Nav.Link>
                   <Nav.Link href="/AddPropertyForm">Add Property</Nav.Link>
                   <Nav.Link href="/Listings">Listings</Nav.Link>
 
@@ -59,7 +59,7 @@ export default function index (data) {
       ))}
     <Def>
         <main>
-            <h1>Here are the current listings!</h1>
+            <h1 className='listingTitle'>Here are the current listings!</h1>
             <div className='row'>
             {propertiesFormatted}
             </div>

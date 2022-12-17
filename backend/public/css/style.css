@@ -10,3 +10,7 @@ azure {
 wild-blue-yonder {
     color: #899dc9ff
 };
+
+h1 .listingTytle {
+    text-align: center;
+}
