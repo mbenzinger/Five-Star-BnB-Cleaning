@@ -5,9 +5,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import axios from "axios";
+import {Routes, Route, useNavigate} from 'react-router-dom'
 
 
 export default function PropertyIndex () {
+  const navigate = useNavigate();
     return (
         <>
         {[false,].map((expand) => (
@@ -31,7 +33,6 @@ export default function PropertyIndex () {
                     <Nav.Link href="/login">Login</Nav.Link>
                     <Nav.Link href="/AddPropertyForm">Add Property</Nav.Link>
                     <Nav.Link href="/Listings">Listings</Nav.Link>
-  
                   </Nav>
   
                 </Offcanvas.Body>
@@ -48,6 +49,9 @@ export default function PropertyIndex () {
               <h1 className='addHead'>Click here to add a new property!</h1>
               <a href="/AddPropertyForm">
               <button type="button" class="btn btn-danger">Add Property</button>
+              </a>
+              <a href="http://localhost:5000/properties">
+                <button type="button" class="btn btn-primary">Go to Listings</button>
               </a>
 
           </main>
