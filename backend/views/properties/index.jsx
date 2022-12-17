@@ -11,10 +11,19 @@ export default function index (data) {
   let propertiesFormatted = data.properties.map((property, index) => {
     return (
       <div className="col-sm-6">
-        <h2>
-        <a href={`/properties/${index}`} >
+        <div class="card" style="width: 18rem;">
+        <img src={property.pic} class="card-img-top" alt={property.name}/>
+      <div class="card-body">
+    <h5 class="card-title"><a href={`/properties/${index}`} >
           {property.name}
-        </a>
+        </a></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+        <h2>
+        
+        <img src alt={property.name}/>
       </h2>
         <p className="text-center">
           Located in {property.city}, {property.state}
@@ -22,7 +31,7 @@ export default function index (data) {
         <p className="text-center">
           Square Footage: {property.squarefootage}
         </p>
-        <img src={property.pic} alt={property.name}/>
+        
       </div>
     )
   })

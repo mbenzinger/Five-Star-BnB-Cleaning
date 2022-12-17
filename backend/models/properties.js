@@ -6,8 +6,9 @@ module.exports = [{
   pic: 'http://placekitten.com/250/250'
 }, {
   name: 'Davids Mansion',
+  pic: 'http://placekitten.com/250/250',
   city: 'Phoenix',
   state: 'AZ',
-  squarefootage: '5000',
-  pic: 'http://placekitten.com/250/250'
+  squarefootage: '5000'
+  
 }]  
