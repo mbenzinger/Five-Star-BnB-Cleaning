@@ -17,7 +17,7 @@ module.exports = {
             email: {
                 type: Sequelize.STRING
             },
-            userType: {
+            role: {
                 type: Sequelize.STRING
             },
             created_at: {

@@ -16,7 +16,7 @@ function SignUpForm() {
 		firstName: '',
 		lastName: '',
 		email: '',
-		userType: '',
+		role: '',
 		password: ''
 	})
 
@@ -134,12 +134,12 @@ function SignUpForm() {
 						<label htmlFor="userType">User Type</label>
 						<br/>
 						<select
-							type="userType"
+							type="role"
 							required
-							value={user.userType}
-							onChange={e => setUser({ ...user, userType: e.target.value })}
-							id="userType"
-							name="userType"
+							value={user.role}
+							onChange={e => setUser({ ...user, role: e.target.value })}
+							id="role"
+							name="role"
 						>
 							<option value=""></option>
 							<option value="Property Owner">Property Owner</option>
