@@ -4,7 +4,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import LoginPicture from '../assets/images/login.jpg'
+import EnterPicture from '../assets/images/enter info.jpg'
+import QuotePicture from '../assets/images/get quote.jpg'
+import CleanPicture from '../assets/images/clean.jpg'
 function Homepage() {
   return (
     <>
@@ -27,6 +30,8 @@ function Homepage() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/signup">Sign-Up</Nav.Link>
                   <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link href="/AddPropertyForm">Add Property</Nav.Link>
+                  <Nav.Link href="/Listings">Listings</Nav.Link>
                   
                 </Nav>
                
@@ -36,6 +41,7 @@ function Homepage() {
         </Navbar>
       ))}
 {/* //meat of assignment  */}
+<div classname='background'>
 <Container>
       <Row>
         <Col>
@@ -60,11 +66,34 @@ function Homepage() {
       </Row>
       <Row>
         <Col></Col>
-        <Col><h2>How We Work</h2></Col>
+        <Col>
+        <br/>
+        <h2>How We Work</h2>
+        </Col>
         <Col></Col>
       </Row>
+      <br/>
+      <Row>      
+        <Col>
+        <h2>Login-in</h2>
+        <img src={LoginPicture}/>
+        </Col>
+        <Col>
+        <h2>Enter Your Address</h2>
+        <img src={EnterPicture}></img>
+        </Col>
+        <Col>
+        <h2>Get A Quote</h2>
+        <img src={QuotePicture}></img>
+        </Col>
+        <Col>
+        <h2>Let us handle the rest</h2>
+        <img src={CleanPicture}></img>
+        </Col>
+      
+      </Row>
     </Container>
-
+    </div>
     </>
     
   );
