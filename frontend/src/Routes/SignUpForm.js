@@ -4,6 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
 function SignUpForm() {
 
@@ -65,47 +68,67 @@ function SignUpForm() {
 
 
 			<div className="center">
+
 			<h1>Sign Up</h1>
 			</div>
 			<form onSubmit={handleSubmit}>
-				<div className="row">
-					<div className="format">
-						<label htmlFor="firstName">First Name</label>
-						<br/>
-						<input
-							required
-							value={user.firstName}
-							onChange={e => setUser({ ...user, firstName: e.target.value })}
-							id="firstName"
-							name="firstName"
-						/>
-					</div>
-					<div className="format">
-						<label htmlFor="lastName">Last Name</label>
-						<br/>
-						<input
-							required
-							value={user.lastName}
-							onChange={e => setUser({ ...user, lastName: e.target.value })}
-							id="lastName"
-							name="lastName"
-						/>
-					</div>
-				</div>
-				<div className="row">
-					<div className="format2">
-						<label htmlFor="email">Email</label>
-						<br/>
-						<input
-							type="email"
-							required
-							value={user.email}
-							onChange={e => setUser({ ...user, email: e.target.value })}
-							id="email"
-							name="email"
-						/>
-					</div>
-				</div>
+				<Form>
+				
+
+				<Form.Group as={Row} className="mb-3" controlId="firstName">
+        <Form.Label column sm="2">
+          First Name
+        </Form.Label>
+        <Col sm="10">
+           <Form.Control 
+		  required
+		  placeholder="Enter First Name"
+		  value={user.firstName}
+		  onChange={e => setUser({ ...user, firstName: e.target.value })}
+		  id="firstName"
+		  name="firstName"
+
+		 />
+        </Col>
+      </Form.Group>				
+					
+	  <Form.Group as={Row} className="mb-3" controlId="lastName">
+        <Form.Label column sm="2">
+          Last Name
+        </Form.Label>
+        <Col sm="10">
+           <Form.Control 
+		  required
+		  placeholder="Enter Last Name"
+		  value={user.lastName}
+		  onChange={e => setUser({ ...user, lastName: e.target.value })}
+		  id="lastName"
+		  name="lastName"
+		 />
+        </Col>
+      </Form.Group>		
+
+	  <Form.Group as={Row} className="mb-3" controlId="email">
+        <Form.Label column sm="2">
+          Email
+        </Form.Label>
+        <Col sm="10">
+           <Form.Control 
+		  type="email"
+		  required
+		  placeholder="example@email.com"
+		  value={user.email}
+		  onChange={e => setUser({ ...user, email: e.target.value })}
+		  id="email"
+		  name="email"
+		 />
+        </Col>
+      </Form.Group>			
+					
+				
+						
+					
+				
 				<div className="format">
 					<div>
 						<label htmlFor="userType">User Type</label>
@@ -123,19 +146,28 @@ function SignUpForm() {
 							<option value="Sub Contractor">Sub Contractor</option>
 						</select>
 					</div>
-					<div>
-						<label htmlFor="password">Password</label>
-						<input
-							type="password"
-							required
-							value={user.password}
-							onChange={e => setUser({ ...user, password: e.target.value })}
-							className="form-control"
-							id="password"
-							name="password"
-						/>
-					</div>
+
+					<Form.Group as={Row} className="mb-3" controlId="password">
+        <Form.Label column sm="2">
+          Password
+        </Form.Label>
+        <Col sm="10">
+           <Form.Control 
+		  type="password"
+		  required
+		  placeholder="Enter Password"
+		  value={user.password}
+		  onChange={e => setUser({ ...user, password: e.target.value })}
+		  className="form-control"
+		  id="password"
+		  name="password"
+		 />
+        </Col>
+      </Form.Group>
+						
+					
 				</div>
+				</Form>
 				<div className="format">
 				<input type="submit" value="Sign Up" />
 				</div>
