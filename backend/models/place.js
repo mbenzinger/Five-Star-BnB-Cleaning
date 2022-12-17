@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
 
-  class Property extends Model {
+  class Place extends Model {
 
 
     static associate({ Owner }) {

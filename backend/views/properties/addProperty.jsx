@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 const Def = require('../default')
-//import { useHistory } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 export default function addProperty() {
 	return (
