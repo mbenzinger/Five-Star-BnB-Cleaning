@@ -1,13 +1,13 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router"
-import { CurrentUser } from "../contexts/CurrentUser"
+//import { CurrentUser } from "../contexts/CurrentUser"
 
-function LoginForm() {
+export default function LoginForm() {
 
     const history = useNavigate()
 
 
-    const { setCurrentUser } = useContext(CurrentUser)
+//    const { setCurrentUser } = useContext(CurrentUser)
 
     const [credentials, setCredentials] = useState({
         email: '',
@@ -28,18 +28,18 @@ function LoginForm() {
 
         const data = await response.json()
 
-        if (response.status === 200) {
-            setCurrentUser(data.user)
-            localStorage.setItem('token', data.token)
-            //console.log(data.token)
-            history.push(`/`)
-        } else {
-            setErrorMessage(data.message)
-        }
+    //     if (response.status === 200) {
+    //         setCurrentUser(data.user)
+    //         localStorage.setItem('token', data.token)
+    //         //console.log(data.token)
+    //         history.push(`/`)
+    //     } else {
+    //         setErrorMessage(data.message)
+    //     }
 
-        console.log(data)
+    //     console.log(data)
 
-    }
+     }
 
     return (
         <main>
@@ -83,4 +83,4 @@ function LoginForm() {
     )
 }
 
-export default LoginForm
+//export default LoginForm

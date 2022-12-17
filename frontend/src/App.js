@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import AddPropertyForm from './Routes/AddPropertyForm';
 import PropertyDetails from './Routes/PropertyDetails';
+import PlaceIndex from './Routes/PropertyIndex';
 import EditPropertyForm from './Routes/EditPropertyForm';
 import LoginForm from './Routes/LoginForm';
 import SignUpForm from './Routes/SignUpForm';
