@@ -9,6 +9,7 @@ import SignUpForm from './Routes/SignUpForm';
 import Homepage from './Routes/Homepage';
 import Error404 from './Routes/Error404'
 import CurrentUser from './contexts/CurrentUser';
+import Listings from './Routes/Listings';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/Error404" element={<Error404 />} />
             <Route path='/CurrentUser' element={<CurrentUser />} />
+            <Route path='/Listings' element={<Listings/>}/>
           </Routes>
         </div>
       </Router>
