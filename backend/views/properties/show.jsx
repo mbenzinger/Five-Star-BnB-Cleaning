@@ -39,18 +39,28 @@ function show (data) {
       ))}
         <Def>
           <main>
-            <h1>{ data.property.name }</h1>
-            <h2>{ data.property.squarefootage }</h2>
-            <h2>{ data.property.city }, { data.property.state }</h2>
-            <a href={`/properties/${data.id}/edit`} className="btn btn-warning"> 
-            Edit
-            </a>     
+          <div className="col-sm-6">
+            <div class="card" style={{width: 500}}>
+              <img src={data.property.pic} class="card-img-top" alt={data.property.name}/>
+                <div class="card-body">
+                <h5 class="card-title">
+                {data.property.name}
+                </h5>
+                <p class="card-text">Located in {data.property.city}, {data.property.state}.
+                Square footage:{data.property.squarefootage}</p>
+                <a href={`/properties/${data.id}/edit`} className="btn btn-warning"> 
+                Edit
+                </a>     
+                  <form method="POST" action={`/properties/${data.id}?_method=DELETE`}> 
+                  <button type="submit" className="btn btn-danger">
+                  Delete
+                  </button>
+                </form>  
+                </div>
+            </div> 
+        </div>
             
-            <form method="POST" action={`/properties/${data.id}?_method=DELETE`}> 
-            <button type="submit" className="btn btn-danger">
-                Delete
-            </button>
-            </form>     
+                 
 
           </main>
         </Def>
