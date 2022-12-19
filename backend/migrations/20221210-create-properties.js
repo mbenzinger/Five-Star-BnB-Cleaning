@@ -8,6 +8,9 @@ module.exports = {
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
+            userId: {
+                type: Sequelize.INTEGER
+            },
             name: {
                 type: Sequelize.STRING
             },
@@ -18,7 +21,7 @@ module.exports = {
                 type: Sequelize.STRING
             },
             squareFeet: {
-                type: Sequelize.NUMBER
+                type: Sequelize.INTEGER
             },
             pic: {
                 type: Sequelize.STRING
