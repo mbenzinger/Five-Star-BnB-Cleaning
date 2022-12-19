@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 function SignUpForm() {
 
@@ -40,7 +41,7 @@ function SignUpForm() {
 {[false, ].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand href="#">Five Star BNB Cleaning</Navbar.Brand>
+            <Navbar.Brand href="/">Five Star BNB Cleaning</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -124,28 +125,7 @@ function SignUpForm() {
 		 />
         </Col>
       </Form.Group>			
-					
-				
-						
-					
-				
-				<div className="format">
-					<div>
-						<label htmlFor="userType">User Type</label>
-						<br/>
-						<select
-							type="role"
-							required
-							value={user.role}
-							onChange={e => setUser({ ...user, role: e.target.value })}
-							id="role"
-							name="role"
-						>
-							<option value=""></option>
-							<option value="Property Owner">Property Owner</option>
-							<option value="Sub Contractor">Sub Contractor</option>
-						</select>
-					</div>
+	
 
 					<Form.Group as={Row} className="mb-3" controlId="password">
         <Form.Label column sm="2">
@@ -163,14 +143,29 @@ function SignUpForm() {
 		  name="password"
 		 />
         </Col>
-      </Form.Group>
-						
-					
-				</div>
-				</Form>
-				<div className="format">
-				<input type="submit" value="Sign Up" />
-				</div>
+      </Form.Group>				
+		</Form>
+		
+		<div>
+			<label htmlFor="userType">User Type</label>
+			<br/>
+			<select
+				type="role"
+				required
+				value={user.role}
+				onChange={e => setUser({ ...user, role: e.target.value })}
+				id="role"
+				name="role"
+			>
+				<option value=""></option>
+				<option value="Property Owner">Property Owner</option>
+				<option value="Sub Contractor">Sub Contractor</option>
+			</select>
+		</div>
+		<br/>
+		<div className="center">
+	<Button variant="primary" type="submit">Sign Up</Button>
+	</div>
 			</form>
 		</main>
 	)
