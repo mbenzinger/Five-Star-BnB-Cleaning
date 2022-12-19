@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 
 function SignUpForm() {
 
-	const history = useNavigate()
+	const navigate = useNavigate()
 
 	const [user, setUser] = useState({
 		firstName: '',
@@ -31,7 +31,7 @@ function SignUpForm() {
 			body: JSON.stringify(user)
 		})
 
-		history.push(`/`)
+		navigate(`/`)
 	}
 
 	return (
@@ -132,7 +132,6 @@ function SignUpForm() {
 				<div className="format">
 					<div>
 						<label htmlFor="userType">User Type</label>
-						<br/>
 						<select
 							type="role"
 							required
