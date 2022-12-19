@@ -1,13 +1,14 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router"
-import { CurrentUser } from "../contexts/CurrentUser"
+// import { CurrentUser } from "../contexts/CurrentUser"
 
 function LoginForm() {
 
+    
+
     const navigate = useNavigate()
 
-
-    const { setCurrentUser } = useContext(CurrentUser)
+    // const { setCurrentUser } = useContext(CurrentUser)
 
     const [credentials, setCredentials] = useState({
         email: '',
@@ -29,7 +30,7 @@ function LoginForm() {
         const data = await response.json()
 
         if (response.status === 200) {
-            setCurrentUser(data.user)
+            // setCurrentUser(data.user)
             localStorage.setItem('token', data.token)
             //console.log(data.token)
             navigate(`/`)
