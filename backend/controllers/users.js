@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const db = require("../models")
+const db = require("../../backend/models/user")
 const bcrypt = require('bcrypt')
 
 const { User } = db
