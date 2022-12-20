@@ -1,15 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
+<<<<<<< HEAD
 import AddPropertyForm from './Routes/AddPropertyForm';
 import PropertyDetails from './Routes/PropertyDetails';
 import PlaceIndex from './Routes/PropertyIndex';
 import EditPropertyForm from './Routes/EditPropertyForm';
+=======
+import AddPropertyForm from './Routes/Properties/AddPropertyForm';
+import PropertyDetails from './Routes/Properties/PropertyDetails';
+import EditPropertyForm from './Routes/Properties/EditPropertyForm';
+>>>>>>> 637f1c8828431fc9edacc0e04261935839e0561e
 import LoginForm from './Routes/LoginForm';
 import SignUpForm from './Routes/SignUpForm';
 import Homepage from './Routes/Homepage';
 import Error404 from './Routes/Error404'
 import CurrentUser from './contexts/CurrentUser';
-import Listings from './Routes/Listings';
+import PropertyIndex from './Routes/Properties/PropertyIndex';
+import Listings from './Routes/Properties/Listings';
 
 function App() {
   return (
@@ -18,15 +25,16 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route exact path="/places" element={<PlaceIndex />} />
-            <Route exact path="/places/new" element={<AddPropertyForm />} />
+            <Route path="/Listings" element={<Listings />} />
+            <Route exact path="/AddPropertyForm" element={<AddPropertyForm />} />
             <Route exact path="/places/:placeId" element={<PropertyDetails />} />
             <Route exact path="/places/:placeId/edit" element={<EditPropertyForm />} />
             <Route path="/signup" element={<SignUpForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/Error404" element={<Error404 />} />
             <Route path='/CurrentUser' element={<CurrentUser />} />
-            <Route path='/Listings' element={<Listings/>}/>
+            <Route path='/PropertyIndex' element={<PropertyIndex />} />
+
           </Routes>
         </div>
       </Router>
