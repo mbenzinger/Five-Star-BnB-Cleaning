@@ -1,6 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router"
+<<<<<<< HEAD:frontend/src/Routes/PropertyDetails.js
 import { CurrentUser } from "../contexts/CurrentUser";
+=======
+import { CurrentUser } from "../../contexts/CurrentUser";
+>>>>>>> aa909f9cee1aa2964ac7d51e35aef496056abce8:frontend/src/Routes/Property/PlaceDetails.js
 
 function PlaceDetails() {
 
