@@ -3,7 +3,38 @@ const Def = require('../default.jsx')
 
 
 function edit_form (data) {
+  
     return (
+      <>
+      {[false, ].map((expand) => (
+        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+          <Container fluid>
+            <Navbar.Brand href="#">Five Star BNB Cleaning</Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                Five Star BNB Cleaning
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Nav.Link href="/signup">Sign-Up</Nav.Link>
+                  <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link href="http://localhost:5000/properties/new">Add Property</Nav.Link>
+                  <Nav.Link href="http://localhost:5000/properties">Listings</Nav.Link>
+                  
+                </Nav>
+               
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
         <Def>
           <main>
             <h1>Edit Place</h1>
@@ -58,6 +89,7 @@ function edit_form (data) {
 			</form>
           </main>
         </Def>
+        </>
     )
 }
 
