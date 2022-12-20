@@ -1,12 +1,12 @@
 import { useEffect, useState, useContext } from "react";
-import { useHistory, useParams } from "react-router"
-import { CurrentUser } from "../contexts/CurrentUser";
+import { useNavigate, useParams } from "react-router"
+import { CurrentUser } from "../../contexts/CurrentUser";
 
 function PlaceDetails() {
 
     const { placeId } = useParams()
 
-    const history = useHistory()
+    const history = useNavigate()
 
     const { currentUser } = useContext(CurrentUser)
 
