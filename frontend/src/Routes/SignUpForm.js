@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 
 function SignUpForm() {
 
-	const history = useNavigate()
+	const navigate = useNavigate()
 
 	const [user, setUser] = useState({
 		firstName: '',
@@ -32,7 +32,7 @@ function SignUpForm() {
 			body: JSON.stringify(user)
 		})
 
-		history.push(`/`)
+		navigate(`/`)
 	}
 
 	return (

@@ -6,8 +6,8 @@ const cors = require('cors');
 const app = express();
 const methodOverride = require('method-override')
 const router = express.Router();
-const path = require('path')
-
+const path = require('path');
+const bcrypt = require('bcrypt');
 // Express Settings
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())

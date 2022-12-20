@@ -14,7 +14,7 @@ function LoginForm() {
 
     
 
-    const history = useNavigate()
+    const navigate = useNavigate()
 
     // const { setCurrentUser } = useContext(CurrentUser)
 
@@ -41,7 +41,7 @@ function LoginForm() {
             // setCurrentUser(data.user)
             localStorage.setItem('token', data.token)
             //console.log(data.token)
-            history.push(`/`)
+            navigate(`/`)
         } else {
             setErrorMessage(data.message)
         }
