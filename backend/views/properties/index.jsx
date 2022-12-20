@@ -29,7 +29,7 @@ export default function index (data) {
   })
   return (
     <>
-      {[false,].map((expand) => (
+      {[false, ].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">Five Star BNB Cleaning</Navbar.Brand>
@@ -41,18 +41,18 @@ export default function index (data) {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Five Star BNB Cleaning
+                Five Star BNB Cleaning
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/signup">Sign-Up</Nav.Link>
-                  <Nav.Link href="http://localhost:3000/login">Login</Nav.Link>
-                  <Nav.Link href="/AddPropertyForm">Add Property</Nav.Link>
-                  <Nav.Link href="/Listings">Listings</Nav.Link>
-
+                  <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link href="http://localhost:5000/properties/new">Add Property</Nav.Link>
+                  <Nav.Link href="http://localhost:5000/properties">Listings</Nav.Link>
+                  
                 </Nav>
-
+               
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

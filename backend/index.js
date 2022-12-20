@@ -1,3 +1,9 @@
+import fs from 'fs';
+import path from 'path';
+import React from 'react';
+import { ReactDOMServer } from 'react-dom/server';
+import App from '../frontend/src/App';
+
 // Modules and Globals
 const express = require('express');
 const { Sequelize } = require('sequelize');
@@ -6,7 +12,7 @@ const cors = require('cors');
 const app = express();
 const methodOverride = require('method-override')
 const router = express.Router();
-const path = require('path');
+
 const bcrypt = require('bcrypt');
 // Express Settings
 app.set('view engine', 'jsx')
@@ -29,9 +35,21 @@ app.use('/api/users', require('./controllers/users'))
 const propertyController = require('./controllers/properties')
 app.use('/properties', propertyController)
 
-app.get('/', (req, res) => {
-    res.render('propertyIndex')
+app.use('^/$', (req, res, next) => {
+fs.readFile(path.resolve('../frontend/build/index.html'), 'utf-8', (err, data) => {
+    if(err){
+        console.log(err)
+        return res.status(500).send("Some error happend")
+    }
+    return res.send(data.replace('<div id="root"></div>',
+     `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`
+     )
+    )
 })
+    //res.render('propertyIndex')
+})
+
+app.use(express.static(path.resolve(__dirname, '..', 'frontend/build')))
 
 app.get('*', (req, res) => {
     res.render('error404')
